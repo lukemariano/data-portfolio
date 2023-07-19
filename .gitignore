@@ -1,3 +1,222 @@
 **/.venv/
 sistema_de_recomendacao_filmes/datasets
 **/.ipynb_**/
+
+
+# Byte-compiled / optimized / DLL files
+Django_twitter/__pycache__/
+Django_twitter/*.py[cod]
+Django_twitter/*$py.class
+# C extensions
+Django_twitter/*.so
+
+
+
+# C extensions
+Django_twitter/*.so
+
+# Distribution / packaging
+Django_twitter/.Python
+Django_twitter/build/
+Django_twitter/develop-eggs/
+Django_twitter/dist/
+Django_twitter/downloads/
+Django_twitter/eggs/
+Django_twitter/.eggs/
+Django_twitter/lib/
+Django_twitter/lib64/
+Django_twitter/parts/
+Django_twitter/sdist/
+Django_twitter/var/
+Django_twitter/wheels/
+Django_twitter/pip-wheel-metadata/
+Django_twitter/share/python-wheels/
+Django_twitter/*.egg-info/
+Django_twitter/.installed.cfg
+Django_twitter/*.egg
+Django_twitter/MANIFEST
+
+
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+Django_twitter/*.manifest
+Django_twitter/*.spec
+
+# Installer logs
+Django_twitter/pip-log.txt
+Django_twitter/pip-delete-this-directory.txt
+
+
+# Installer logs
+Django_twitter/pip-log.txt
+Django_twitter/pip-delete-this-directory.txt
+
+
+
+# Unit test / coverage reports
+Django_twitter/htmlcov/
+Django_twitter/.tox/
+Django_twitter/.nox/
+Django_twitter/.coverage
+Django_twitter/.coverage.*
+Django_twitter/.cache
+Django_twitter/nosetests.xml
+Django_twitter/coverage.xml
+Django_twitter/*.cover
+Django_twitter/*.py,cover
+Django_twitter/.hypothesis/
+Django_twitter/.pytest_cache/
+
+# Translations
+Django_twitter/*.mo
+Django_twitter/*.pot
+
+
+# Translations
+Django_twitter/*.mo
+Django_twitter/*.pot
+
+
+
+# Django stuff:
+Django_twitter/*.log
+Django_twitter/local_settings.py
+Django_twitter/db.sqlite3
+Django_twitter/db.sqlite3-journal
+
+# Flask stuff:
+Django_twitter/instance/
+Django_twitter/.webassets-cache
+
+# Scrapy stuff:
+Django_twitter/.scrapy
+# Sphinx documentation
+Django_twitter/docs/_build/
+# PyBuilder
+Django_twitter/target/
+# Jupyter Notebook
+Django_twitter/.ipynb_checkpoints
+# IPython
+Django_twitter/profile_default/
+Django_twitter/ipython_config.py
+# pyenv
+Django_twitter/.python-version
+
+
+# Flask stuff:
+Django_twitter/instance/
+Django_twitter/.webassets-cache
+
+
+# Scrapy stuff:
+Django_twitter/.scrapy
+
+# Sphinx documentation
+Django_twitter/docs/_build/
+
+# PyBuilder
+Django_twitter/target/
+
+# Jupyter Notebook
+Django_twitter/.ipynb_checkpoints
+
+# IPython
+Django_twitter/profile_default/
+Django_twitter/ipython_config.py
+
+# pyenv
+.python-version
+
+
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+Django_twitter/__pypackages__/
+
+# Celery stuff
+Django_twitter/celerybeat-schedule
+Django_twitter/celerybeat.pid
+# SageMath parsed files
+*.sage.py
+
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
+
+
+# Celery stuff
+Django_twitter/celerybeat-schedule
+Django_twitter/celerybeat.pid
+
+# SageMath parsed files
+Django_twitter/*.sage.py
+
+
+
+# Environments
+Django_twitter/.env
+Django_twitter/.venv
+Django_twitter/env/
+Django_twitter/venv/
+Django_twitter/ENV/
+Django_twitter/env.bak/
+Django_twitter/venv.bak/
+
+# Spyder project settings
+Django_twitter/.spyderproject
+Django_twitter/.spyproject
+
+# Rope project settings
+Django_twitter/.ropeproject
+# mkdocs documentation
+Django_twitter//site
+
+
+# Spyder project settings
+Django_twitter/.spyderproject
+Django_twitter/.spyproject
+
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+
+# mypy
+Django_twitter/.mypy_cache/
+Django_twitter/.dmypy.json
+Django_twitter/dmypy.json
+
+# Pyre type checker
+Django_twitter/.pyre/
+
+Django_twitter/db.sqlite3/
+
+
+# Pyre type checker
+Django_twitter/.pyre/
+
+Django_twitter/db.sqlite3/
+
+Django_twitter/db.sqlite3/
+
+Django_twitter/Login/migrations/__pycache__
+Django_twitter/Login/views/__pycache__
+Django_twitter/Login/__pycache__
+Django_twitter/post/migrations/__pycache__
+Django_twitter/post/__pycache__
+Django_twitter/Twitter/__pycache__
+
+Django_twitter/staticfiles/
+
+Django_twitter/.vscode
