@@ -220,3 +220,7 @@ Django_twitter/Twitter/__pycache__
 Django_twitter/staticfiles/
 
 Django_twitter/.vscode
+
+# Airflow
+
+**/airflow/logs/
