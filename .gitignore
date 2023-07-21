@@ -224,4 +224,4 @@ Django_twitter/.vscode
 # Airflow
 
 **/airflow/logs/
-**/airflow/dags/__pycache__/
+**/airflow/dags/**/__pycache__/
