@@ -1,8 +1,11 @@
 import xmltodict
 import requests
+import pandas as pd
 
 from airflow.decorators import dag, task
 from airflow.providers.sqlite.operators.sqlite import SqliteOperator
+from airflow.providers.sqlite.hooks.sqlite import SqliteHook
+
 import pendulum
 
 
@@ -27,7 +30,8 @@ def podcast_summary():
             published TEXT,
             description TEXT
         )
-        """
+        """,
+        sqlite_conn_id="podcasts"
     )
 
     @task()
@@ -41,7 +45,21 @@ def podcast_summary():
         return episodes
 
     podcast_episodes = get_episodes()
+
+    @task()
+    def load_episodes(episodes):
+        hook = SqliteHook(sqlite_conn_id="podcasts")
+        stored = hook.get_pandas_df("SELECT * FROM episodes;")
+        new_episodes = []
+
+        for episode in episodes:
+            if episode["link"] not in stored["link"].values:
+                filename = f"{episode['link'].split('/')[-1]}.mp3"
+                new_episodes.append([episode["link"], episode["title"], episode["pubDate"], episode["description"], filename])
+        hook.insert_rows(table="episodes", rows=new_episodes, target_fields=["link", "title", "published", "description", "filename"])
+
+    store_data = load_episodes(podcast_episodes)
     
-    create_database >> podcast_episodes
+    create_database >> podcast_episodes >> store_data
 
 summary = podcast_summary()
