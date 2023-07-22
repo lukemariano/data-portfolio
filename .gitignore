@@ -225,3 +225,4 @@ Django_twitter/.vscode
 
 **/airflow/logs/
 **/airflow/dags/**/__pycache__/
+data_pipeline_podcasts/airflow/dags/podcast_summary/episodes/

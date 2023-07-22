@@ -1,12 +1,13 @@
 import xmltodict
 import requests
+import os
+
 import pandas as pd
+import pendulum
 
 from airflow.decorators import dag, task
 from airflow.providers.sqlite.operators.sqlite import SqliteOperator
 from airflow.providers.sqlite.hooks.sqlite import SqliteHook
-
-import pendulum
 
 
 PODCAST_URL = "https://www.marketplace.org/feed/podcast/marketplace/"
@@ -43,8 +44,7 @@ def podcast_summary():
         print(f"Found {len(episodes)} episodes.")
 
         return episodes
-
-    podcast_episodes = get_episodes()
+    
 
     @task()
     def load_episodes(episodes):
@@ -58,6 +58,22 @@ def podcast_summary():
                 new_episodes.append([episode["link"], episode["title"], episode["pubDate"], episode["description"], filename])
         hook.insert_rows(table="episodes", rows=new_episodes, target_fields=["link", "title", "published", "description", "filename"])
 
+    
+    @task()
+    def download_episodes(episodes):
+        for episode in episodes:
+            filename = f"{episode['link'].split('/')[-1]}.mp3"
+            audio_path = os.path.join("episodes", filename)
+            
+            if not os.path.exists(audio_path):
+                print(f"Baixando {filename}")
+                audio = requests.get(episode["enclosure"]["@url"])
+                with open(audio_path, "wb+") as f:
+                    f.write(audio.content)
+
+    
+
+    podcast_episodes = get_episodes()
     store_data = load_episodes(podcast_episodes)
     
     create_database >> podcast_episodes >> store_data
